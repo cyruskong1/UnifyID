@@ -12,11 +12,11 @@ function getUsernameField() {
   var inputs = document.getElementsByTagName('input');
 
     for(var i = 0; i < inputs.length; i++) {
-      if(inputs[i].type.toLowerCase() == 'email' || inputs[i].id.toLowerCase() == 'email'  || inputs[i].id.toLowerCase() == 'username'|| inputs[i].class == 'email' || inputs[i].name.toLowerCase() == 'email') {
+      if(inputs[i].type.toLowerCase() == 'email' || inputs[i].id.toLowerCase() == 'email'  || inputs[i].id.toLowerCase() == 'username'|| inputs[i].class == 'email' || inputs[i].name.toLowerCase() == 'email' || inputs[i].id.toLowerCase().includes('log') || inputs[i].id.toLowerCase().includes('user') || inputs[i].name.toLowerCase().includes('user')) {
         email = inputs[i];
+        console.log('got username', email);
       }
     }
-    console.log('got username');
     return email;
     
 
