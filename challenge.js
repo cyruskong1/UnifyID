@@ -12,10 +12,14 @@ function getUsernameField() {
   var inputs = document.getElementsByTagName('input');
 
     for(var i = 0; i < inputs.length; i++) {
-      if(inputs[i].type.toLowerCase() == 'email' || inputs[i].id.toLowerCase() == 'email'  || inputs[i].id.toLowerCase() == 'username'|| inputs[i].class == 'email' || inputs[i].name.toLowerCase() == 'email' || inputs[i].id.toLowerCase().includes('log') || inputs[i].id.toLowerCase().includes('user') || inputs[i].name.toLowerCase().includes('user')) {
+      if(inputs[i].type.toLowerCase() == 'email' || inputs[i].id.toLowerCase() == 'email'  || inputs[i].id.toLowerCase() == 'username'|| inputs[i].id == 'usernameMasked'|| inputs[i].class == 'email' || inputs[i].name.toLowerCase() == 'email') {
         email = inputs[i];
         console.log('got username', email);
       }
+      // if (inputs[i].id.toLowerCase().includes('log') || inputs[i].id.toLowerCase().includes('user') || inputs[i].name.toLowerCase().includes('user')) {
+      //   email = inputs[i];
+      //   console.log('got username', email);
+      // }
     }
     return email;
     
@@ -42,7 +46,7 @@ function getPasswordField() {
 
   for(var i = 0; i < inputs.length; i++) {
     console.log('type of class', typeof inputs[i].id);
-    if(inputs[i].type.toLowerCase().includes('pass') || inputs[i].id.toLowerCase().includes('pass') || inputs[i].name.includes('pass')) {
+    if(inputs[i].type.toLowerCase() == 'password' ||inputs[i].type.toLowerCase().includes('pass') || inputs[i].id.toLowerCase().includes('pass') || inputs[i].name.includes('pass')) {
       console.log('input', i, inputs[i]);
       password = inputs[i];
       console.log('password', password)
